@@ -1,0 +1,123 @@
+.tree{
+    width: 240px;
+    overflow-x: scroll;
+    border:1px solid #eee;
+    padding-right: 20px;
+    padding-left: 10px;
+    &>.nodeList{
+      padding-left:5px !important;
+    }
+    .nodeList{
+      overflow: hidden;
+      padding-left: 20px;
+      white-space: nowrap;
+      .hideTree{
+        display: none;
+      }
+      .showTree{
+        display: block;
+      }
+      .openIcon{
+        display: inline-block;
+        cursor: pointer;
+        z-index: 10000;
+        position: relative;
+      }
+      .liWrapperLine{
+        background : url('http://www.jq22.com/demo/bootstrap-ztree3201708300202/css/bootstrapStyle/img/line_conn.png') -3px 0px repeat-y;
+      }
+      .liWrapper{
+        transition:height 0.2s;
+        -moz-transition:height 0.2s;
+        -webkit-transition:height 0.2s;
+        -o-transition:height 0.2s;
+        position: relative;
+        .line{
+          background-image: url('http://www.jq22.com/demo/bootstrap-ztree3201708300202/css/bootstrapStyle/img/bootstrap.png');
+          width: 21px;
+          height: 25px;
+          position: absolute;
+          left: 17px;
+          background-position: -84px -21px;
+          z-index: 999;
+        }
+        li{
+          &:last-child{
+            &>.line{
+              background-position: -84px -42px;
+            }
+            &>.liWrapper{
+              background : unset;
+            }
+          }
+        }
+      }
+      .itemWrapper{
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        user-select: none;
+        cursor: pointer;
+        font-size:12px;
+        display: inline-block;
+        height: 24px;
+        line-height: 24px;
+        margin-right: 10px;
+        .myIcon{
+          padding-right: 10px;
+        }
+        &:hover{
+          color:#108ee9;
+        }
+      }
+      .itemSelected{
+        background-color: rgb(236,246,253);
+        color:#108ee9;
+      }
+      .rotateIcon {
+        animation:rotation 1s  linear infinite;
+        -webkit-animation:rotation 1s  linear infinite;
+      }
+    }
+    .select-box{
+    display: inline-block;
+      margin-left: 6px;
+    .label-checkbox{
+      &::before{
+        width : 15px !important;
+        height: 15px !important;
+      }
+    }
+    .check-span{
+      &::after{
+        width : 15px !important;
+        height: 15px !important;
+        font-size: 9px !important;
+        top: -2px !important;
+      }
+    }
+  }
+    ul,li{
+      padding: 0 0;
+      margin: 0 0;
+      list-style: none;
+    }
+    li{
+      &:last-child{
+        &>.liWrapper{
+          background : unset;
+        }
+      }
+    }
+}
+@keyframes rotation{
+  from{transform:rotate(0)}
+  to{transform:rotate(360deg)}
+}
+@-webkit-keyframes rotation{
+  from{transform:rotate(0)}
+  to{transform:rotate(360deg)}
+}
+@-moz-keyframes rotation{
+  from{transform:rotate(0)}
+  to{transform:rotate(360deg)}
+}
